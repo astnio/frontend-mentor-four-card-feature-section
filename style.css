@@ -28,7 +28,7 @@
 	--clr-very-light-gray: hsl(0, 0%, 98%);
 	--clr-white: rgb(255, 255, 255);
 
-	--card-max-width: 375px;
+	--card-max-width: 325px;
 	--card-top-border-size: 5px;
 
 	font-size: 15px;
@@ -46,8 +46,6 @@ body {
 	color: var(--clr-very-dark-blue);
 
 	min-height: 100dvh;
-
-	padding: 1rem;
 }
 
 h1,
@@ -82,16 +80,19 @@ header {
 
 .header-title,
 .header-subtitle {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	line-height: 1ch;
 }
 
 header > p {
 	text-align: center;
 	color: var(--clr-grayish-blue);
-	font-size: 1.2rem;
+	font-size: 1rem;
 
-	margin-block: 2.8rem;
+	margin-top: 1.8rem;
+	margin-bottom: 3rem;
+
+	max-width: 34ch;
 }
 
 /*** Main ***/
@@ -116,8 +117,8 @@ main {
 	width: 100%;
 	max-width: var(--card-max-width);
 
-	padding-inline: 3rem;
-	padding-block: 1.2rem;
+	padding-inline: 2rem;
+	padding-block: 1rem;
 
 	/* border-top: var(--card-top-border-size) solid; */
 	border-radius: 10px;
@@ -136,7 +137,7 @@ main {
 
 .card-title {
 	font-weight: 600;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 }
 
 .card > p {
@@ -171,10 +172,72 @@ main {
 
 /*** Footer ***/
 
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10rem;
+	padding-bottom: 0.6rem;
+	width: 100%;
+	color: var(--clr-grayish-blue);
+}
+
 .attribution {
 	font-size: 11px;
 	text-align: center;
 }
 .attribution a {
 	color: hsl(228, 45%, 44%);
+}
+
+/*** Desktop ***/
+
+@media screen and (min-width: 1280px) {
+	:root {
+		--card-max-width: 375px;
+	}
+
+	header {
+		max-width: 64ch;
+		margin-top: 6rem;
+		margin-top: auto;
+	}
+
+	.header-title,
+	.header-subtitle {
+		font-size: 2.4rem;
+		line-height: 0.8ch;
+	}
+
+	header > p {
+		max-width: 56ch;
+	}
+
+	main {
+		display: grid;
+		gap: 2rem;
+		justify-content: center;
+		align-content: center;
+		margin-top: 0;
+	}
+
+	.card[data-card-type='supervisor'] {
+		grid-column: 1;
+		grid-row: 1 / span 2;
+	}
+
+	.card[data-card-type='team_builder'] {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.card[data-card-type='karma'] {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.card[data-card-type='calculator'] {
+		grid-column: 3;
+		grid-row: 1 / span 2;
+	}
 }
