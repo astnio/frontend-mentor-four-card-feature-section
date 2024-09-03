@@ -59,4 +59,4 @@ CSS Grid feels like a very powerful tool, and is one of the things I want to foc
 ## Author
 
 - Website - [Austin Hagel](https://austinh.io)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/austinh-io)
+- Frontend Mentor - [@austinh-io](https://www.frontendmentor.io/profile/austinh-io)
